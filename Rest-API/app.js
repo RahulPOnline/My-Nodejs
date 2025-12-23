@@ -25,21 +25,35 @@ app.get('/get', (req, res) => {
 })
 
 app.get('/get/:id', (req, res) => {
-console.log('params:', req.params);
+    console.log('params:', req.params);
     console.log('id type:', typeof req.params.id);
 
     const id = Number(req.params.id)
-     console.log('parsed id:', id);
+    console.log('parsed id:', id);
     const book = books.find(item => item.id === id)
     if (book) {
         res.status(200).json(book)
     }
-    else{
+    else {
         res.status(404).json({
-            message : "book not found try with different id"
+            message: "book not found try with different id"
         })
     }
 })
+
+
+app.post('/add', (req,res)=>{
+    const newBook = {
+        id : books.length + 1,
+        title : `Book ${books.length + 1}`
+    }
+    books.push(newBook)
+    res.status(200).json({
+        message : 'new book is added'
+    })
+})
+
+
 
 
 
