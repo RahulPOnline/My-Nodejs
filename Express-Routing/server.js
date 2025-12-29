@@ -79,7 +79,16 @@ server.get("/womens/:id", (req, res) => {
     res.send(womensArr[id])
 })
 
+server.post("/womens", (req, res) => {
+    let entry = req.body
 
+    if(!(entry.title && entry.price))
+    {
+        res.status(400).json({error:"invalid request"})
+    }
+    womensArr.push(entry)
+    res.status(201).json(womensArr)
+})
 
 
 
