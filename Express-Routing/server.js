@@ -63,6 +63,10 @@ server.get("/mens/:id", (req, res) => {
 
 server.post("/mens", (req, res) => {
     let entry = req.body
+    if(!(entry.title && entry.price))
+    {
+        res.status(400).json({error:"invalid entry"})
+    }
     mensArr.push(entry)
     res.status(201).json(mensArr)
 })
