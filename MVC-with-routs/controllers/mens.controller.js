@@ -1,4 +1,4 @@
-const mensArr=require("../models/mens.model")
+let mensArr = require("../models/mens.model")
 
 function getAllmens(req, res) {
     res.json(mensArr)
@@ -23,8 +23,38 @@ function getMensDatabyid(req, res) {
     res.send(mensArr[id])
 }
 
-module.exports={
+
+function deleteMenDataById(req, res) {
+    const id = +req.params.id
+    mensArr = mensArr.filter((el, i, arr) => {
+        return el.id != id
+    })
+    res.json(mensArr)
+}
+
+
+function patchMenDataById(req, res) {
+    const id = +req.params.id
+    mensArr = mensArr.map((el, i, arr) => {
+        let update = req.body
+        if (el.id == id) {
+            return {...el,...update}
+        }
+        else {
+            return el
+        }
+
+    })
+    res.json(mensArr)
+}
+
+
+
+
+module.exports = {
     getAllmens,
     postMensdata,
-    getMensDatabyid
+    getMensDatabyid,
+    deleteMenDataById,
+    patchMenDataById
 }

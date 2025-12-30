@@ -45,6 +45,15 @@ server.post("/mens", mensController.postMensdata)
 
 server.get("/mens/:id", mensController.getMensDatabyid)
 
+server.delete("/mens/:id", mensController.deleteMenDataById)
+
+server.patch("/mens/:id", mensController.patchMenDataById)
+
+
+
+
+
+
 server.get("/womens", (req, res) => {
     res.json(womensArr)
 })
