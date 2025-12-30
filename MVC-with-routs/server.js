@@ -1,10 +1,11 @@
 const express = require('express')
 const mensController = require("./controllers/mens.controller")
+const mensRouter = require("./routes/mens.routes")
 console.log(mensController);
 
 const server = express()
 
-server.use((req,res,next)=>{
+server.use((req, res, next) => {
     console.log((Date.now()));
     console.log("middleware is executed");
     next()
@@ -39,18 +40,9 @@ server.get("/", (req, res) => {
     res.send(Date.now())
 })
 
-server.get("/mens", mensController.getAllmens)
-
-server.post("/mens", mensController.postMensdata)
-
-server.get("/mens/:id", mensController.getMensDatabyid)
-
-server.delete("/mens/:id", mensController.deleteMenDataById)
-
-server.patch("/mens/:id", mensController.patchMenDataById)
 
 
-
+server.use("/mens", mensRouter)
 
 
 
@@ -69,9 +61,8 @@ server.get("/womens/:id", (req, res) => {
 server.post("/womens", (req, res) => {
     let entry = req.body
 
-    if(!(entry.title && entry.price))
-    {
-        res.status(400).json({error:"invalid request"})
+    if (!(entry.title && entry.price)) {
+        res.status(400).json({ error: "invalid request" })
     }
     womensArr.push(entry)
     res.status(201).json(womensArr)

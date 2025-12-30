@@ -49,6 +49,22 @@ function patchMenDataById(req, res) {
 }
 
 
+function putMenDataById(req, res) {
+    const id = +req.params.id
+    mensArr = mensArr.map((el, i, arr) => {
+        let update = req.body
+        if (el.id == id) {
+            return {id,...update}
+        }
+        else {
+            return el
+        }
+
+    })
+    res.json(mensArr)
+}
+
+
 
 
 module.exports = {
@@ -56,5 +72,6 @@ module.exports = {
     postMensdata,
     getMensDatabyid,
     deleteMenDataById,
-    patchMenDataById
+    patchMenDataById,
+    putMenDataById
 }
