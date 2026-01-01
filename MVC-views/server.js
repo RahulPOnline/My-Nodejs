@@ -1,6 +1,8 @@
 const express = require('express')
 const fileController = require("./controller/file.controller")
 const fileRouter = require("./routes/home.routes")
+let path = require('path')
+
 
 
 const server = express()
@@ -15,7 +17,8 @@ server.use(express.json())
 
 server.use("/", fileRouter)
 
-
+let static = express.static(path.join(__dirname,"images"))
+server.use("/static",static)
 
 const PORT = 3000
 server.listen(PORT, () => {
