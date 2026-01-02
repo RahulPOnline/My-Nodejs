@@ -1,6 +1,6 @@
 const express = require('express')
 const fileController = require("./controller/file.controller")
-const fileRouter = require("./routes/home.routes")
+const homeRouter = require("./routes/home.routes")
 let path = require('path')
 
 
@@ -15,7 +15,7 @@ server.use((req, res, next) => {
 
 server.use(express.json())
 
-server.use("/", fileRouter)
+server.use("/", homeRouter)
 
 let static = express.static(path.join(__dirname,"images"))
 server.use("/static",static)

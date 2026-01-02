@@ -1,9 +1,8 @@
 const express = require('express')
 const fileController = require('../controller/file.controller')
+const homeRouter = express.Router()
 
-const fileRouter = express.Router()
-
-fileRouter.get("/",fileController.homepage)
+homeRouter.get("/",fileController.homepage)
 
 
-module.exports=fileRouter
+module.exports=homeRouter
