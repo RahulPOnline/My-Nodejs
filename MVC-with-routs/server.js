@@ -1,9 +1,11 @@
 const express = require('express')
 const mensController = require("./controllers/mens.controller")
 const womensController = require("./controllers/womens.controller")
+const kidsController = require("./controllers/kids.controller")
 const mensRouter = require("./routes/mens.routes");
 const womensRouter = require('./routes/womens.routes');
-console.log(mensController);
+const kidsRouter = require('./routes/kids.routes');
+
 
 const server = express()
 
@@ -22,6 +24,9 @@ server.get("/", (req, res) => {
 server.use("/mens", mensRouter)
 
 server.use("/womens", womensRouter)
+
+server.use("/kids", kidsRouter)
+
 
 // server.get("/womens/:id", (req, res) => {
 //     let id = +req.params.id
