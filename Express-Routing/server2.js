@@ -50,7 +50,7 @@ server.get('/mens/:id', (req, res) => {
     let id = +req.params.id
 
     if (id > mensArr.length - 1) {
-        res.status(404).json({ error: "data not found" })
+        return res.status(404).json({ error: "data not found" })
     }
     res.json(mensArr[id])
 })
@@ -58,7 +58,7 @@ server.get('/mens/:id', (req, res) => {
 server.post('/mens', (req, res) => {
     let entry = req.body
     if (!(entry.title && entry.price)) {
-        res.status(400).json({ error: "invalid entry" })
+        return res.status(400).json({ error: "invalid entry" })
     }
     mensArr.push(entry)
     res.status(201).json(mensArr)
@@ -72,7 +72,7 @@ server.get('/womens', (req, res) => {
 server.get('/womens/:id', (req, res) => {
     let id = +req.params.id
     if (id > womensArr.length - 1) {
-        res.status(404).json({ error: "data not found" })
+        return res.status(404).json({ error: "data not found" })
     }
     res.json(womensArr[id])
 })
@@ -80,7 +80,7 @@ server.get('/womens/:id', (req, res) => {
 server.post('/womens', (req, res) => {
     let entry = req.body
     if (!(entry.title && entry.price)) {
-        res.status(404).json({ error: "invalid entry" })
+        return res.status(404).json({ error: "invalid entry" })
     }
     womensArr.push(entry)
     res.status(201).json(womensArr)
