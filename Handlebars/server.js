@@ -28,9 +28,6 @@ server.get("/view",(req,res)=>{
 })
 
 
-// let static = express.static(path.join(__dirname,"images"))
-// server.use("/static",static)
-
 
 const PORT = 3000
 server.listen(PORT, () => {
