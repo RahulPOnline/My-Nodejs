@@ -15,15 +15,18 @@ server.use((req, res, next) => {
 
 server.use(express.json())
 
+
 server.use("/", homeRouter)
 
 server.set("view engine","hbs")
+
 server.set("views",path.join(__dirname,"views"))
+
 server.get("/view",(req,res)=>{
     res.render("index",{
         title:"title",
         data:"data",
-        date: Date.now()
+        date: Date.now(),
     })
 })
 

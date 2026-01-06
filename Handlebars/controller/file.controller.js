@@ -5,7 +5,7 @@ function homepage(req,res){
 
     // res.send()
 
-    res.sendFile(path.join(__dirname,"..","images","image.jpg"))
+    res.sendFile(path.join(__dirname,"..","public","image.jpg"))
 }
 
 module.exports={
