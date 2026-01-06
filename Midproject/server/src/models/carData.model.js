@@ -20,6 +20,8 @@ fs.createReadStream(path.join(__dirname, "..", "..", "data", "CarPrice.csv"))
         console.log("something wrong", error);
     })
     .on("end", () => {
-        console.log(carData);
+        // console.log(carData);
 
     })
+
+    module.exports=carData
