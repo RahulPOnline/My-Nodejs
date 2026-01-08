@@ -15,11 +15,23 @@ function getProductsById(req, res) {
 }
 async function postProducts(req, res) {
     let data = req.body
-    let productD = []
+    // let productD = []
+    const csvProducts = []
+    const fileExists = fs.existsSync(productCSV)
+
+    // Ensure keys match the CSV headers
+    const record = {
+        id: data.Id,
+        name: data.Name,
+        description: data.Description,
+        brand: data.Brand,
+        category: data.Category,
+        price: data.Price
+    }
+
     const csvWriter = createObjectCsvWriter({
         path: productCSV,
-        headers: [
-
+        header: [
             { id: "id", title: "Id" },
             { id: "name", title: "Name" },
             { id: "description", title: "Description" },
@@ -27,32 +39,35 @@ async function postProducts(req, res) {
             { id: "category", title: "Category" },
             { id: "price", title: "Price" },
         ],
-        append: fs.existsSync(productCSV)
+        append: fileExists
     })
 
     try {
         // const { id, name, description, brand, category, price } = req.body
 
-        await csvWriter.writeRecords([data])
+        await csvWriter.writeRecords([record])
 
         fs.createReadStream(productCSV)
             .pipe(parse({
-                comment: "#",
-                columns: true
+                columns: true,
+                skip_empty_lines: true,
+                relax_column_count: true,
+                trim: true,
             }))
             .on("data", (data) => {
-                productD.push(data)
+                csvProducts.push(data)
             })
             .on("error", (error) => {
                 console.log("something went wrong", error)
-
+                res.status(500).json({ error: "CSV read failed" })
             })
             .on("end", () => {
-                res.json({ message: "Data added to CSV successfully" })
-                productD
-                // prodData.length = 0
-                // prodData.push(...proData)
-
+                prodData.length = 0
+                prodData.push(...csvProducts)
+                res.json({
+                    message: "Data added to CSV successfully",
+                    productData: csvProducts
+                })
             })
     }
     catch (error) {
