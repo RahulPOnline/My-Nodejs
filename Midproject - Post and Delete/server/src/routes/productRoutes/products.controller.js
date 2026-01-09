@@ -21,12 +21,12 @@ async function postProducts(req, res) {
 
     // Ensure keys match the CSV headers
     const record = {
-        id: data.Id,
-        name: data.Name,
-        description: data.Description,
-        brand: data.Brand,
-        category: data.Category,
-        price: data.Price
+        id: data.Id || data.id,
+        name: data.Name || data.name,
+        description: data.Description || data.description,
+        brand: data.Brand || data.brand,
+        category: data.Category || data.category,
+        price: data.Price || data.price
     }
 
     const csvWriter = createObjectCsvWriter({
@@ -39,7 +39,8 @@ async function postProducts(req, res) {
             { id: "category", title: "Category" },
             { id: "price", title: "Price" },
         ],
-        append: fileExists
+        append: fileExists,
+        // recordDelimiter: '\n'
     })
 
     try {
