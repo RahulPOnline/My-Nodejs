@@ -19,7 +19,7 @@ server.get("/", (req, res) => {
 });
 
 
-// ✅ Get all friends or students
+// Get all friends or students
 server.get("/:endpoint", (req, res) => {
     const { endpoint } = req.params;
 
@@ -33,7 +33,7 @@ server.get("/:endpoint", (req, res) => {
 });
 
 
-// ✅ Get friend or student by id
+// Get friend or student by id
 server.get("/:endpoint/:id", (req, res) => {
     const { endpoint, id } = req.params;
     const numericId = Number(id);
