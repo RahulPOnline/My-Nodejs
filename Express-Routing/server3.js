@@ -18,8 +18,8 @@ let mensArr = [
     },
     {
         id: 2,
-        title: "Shoes",
-        category: "Footwear",
+        title: "Samsung",
+        category: "Mobile",
         price: 2000
     },
 ]
