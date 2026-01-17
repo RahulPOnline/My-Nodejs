@@ -16,6 +16,12 @@ let mensArr = [
         category: "Footwear",
         price: 2000
     },
+    {
+        id: 2,
+        title: "Shoes",
+        category: "Footwear",
+        price: 2000
+    },
 ]
 let womensArr = [
     {
@@ -88,8 +94,7 @@ server.post("/womens", (req, res) => {
 })
 
 
-
-const PORT = 3000
+const PORT = 5000
 server.listen(PORT, () => {
     console.log(`server started at ${PORT}`);
 })
