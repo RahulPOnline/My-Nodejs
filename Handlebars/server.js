@@ -3,8 +3,6 @@ const fileController = require("./controller/file.controller")
 const homeRouter = require("./routes/home.routes")
 let path = require('path')
 
-
-
 const server = express()
 
 server.use((req, res, next) => {
