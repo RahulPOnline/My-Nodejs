@@ -15,7 +15,9 @@ server.use(express.json())
 
 
 server.use("/", homeRouter)
-server.use(express.static(path.join(__dirname, "public")));
+
+server.use(express.static(path.join(__dirname, "public")))
+
 server.set("view engine","hbs")
 
 server.set("views",path.join(__dirname,"views"))
