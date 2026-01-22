@@ -18,7 +18,7 @@ fs.createReadStream(path.join(__dirname, '..', '..', 'data', 'MensProduct.csv'))
         console.log("something went wrong", error);
     })
     .on('end', () => {
-        console.log(mensData);
+        // console.log(mensData);
     })
 
 module.exports = mensData
