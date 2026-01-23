@@ -16,9 +16,10 @@ fs.createReadStream(path.join(__dirname, '..', '..', 'data', 'KidsProduct.csv'))
         kidsData.push(data)
     })
     .on('error', (error) => {
-        console.log("something went wrong");
+        console.log("something went wrong",error);
     })
     .on('end', () => {
-        console.log(kidsData);
-
+        // console.log(kidsData);
     })
+
+    module.exports=kidsData

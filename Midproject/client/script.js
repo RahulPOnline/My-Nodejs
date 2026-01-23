@@ -37,3 +37,17 @@ async function getAllMensByid() {
 
 getAllMensByid()
 
+
+async function getAllkids(){
+    let data = await fetch("http://localhost:3000/kids")
+    let actualdata = await data.json()
+    console.log(actualdata);
+}
+getAllkids()
+
+async function getAllkidsbyid(){
+    let data = await fetch("http://localhost:3000/kids/3")
+    let actualdata = await data.json()
+    console.log(actualdata);
+}
+getAllkidsbyid()
