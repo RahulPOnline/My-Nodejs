@@ -1,0 +1,11 @@
+product_ID,style_rating,product_name,fabric_type,production_type,sleeve_type,product_category,fit_type,origin,waist_size,length_cm,width_cm,height_cm,weight_g,weave_type,material_layers,thickness,stitching_type,durability_score,flexibility_score,comfort_score,popularity,max_wash_cycles,daily_use_score,outdoor_use_score,price
+1,3,Kids Classic Cotton Shirt,cotton,standard,short,shirt,regular,local,54.2,92.4,38.6,28.4,180,plain,three,80,reinforced,3.2,3.5,9.5,180,3000,28,22,2499
+2,3,Kids Premium Casual Shirt,cotton,standard,short,shirt,regular,local,55.0,94.1,39.2,29.1,185,plain,three,82,reinforced,3.3,3.6,9.6,190,3200,29,23,2799
+3,2,Kids Sporty Hoodie,polyester,standard,long,hoodie,relaxed,imported,58.6,98.5,41.4,32.0,240,fleece,four,95,double,3.4,3.9,9.4,210,3500,26,27,3199
+4,2,Kids Formal School Shirt,cotton,standard,long,shirt,regular,local,56.8,96.7,40.1,30.5,190,plain,three,78,reinforced,3.1,3.3,9.3,175,3000,27,20,2599
+5,2,Kids Denim Jacket,denim,standard,long,jacket,regular,local,60.2,102.8,43.5,34.0,320,heavy,four,110,double,3.6,3.2,8.8,165,4000,22,30,3999
+6,2,Kids Everyday Shirt,cotton,standard,short,shirt,regular,local,55.5,95.3,39.6,29.4,185,plain,three,80,reinforced,3.2,3.4,9.5,185,3200,28,21,2699
+7,1,Kids Winter Coat,wool,standard,long,coat,relaxed,imported,63.0,108.2,46.7,36.8,420,heavy,five,130,double,3.8,3.1,8.9,150,4500,20,32,4999
+8,1,Kids Outdoor Jacket,polyester,standard,long,jacket,relaxed,imported,62.5,106.9,45.9,35.6,380,heavy,four,120,double,3.7,3.6,9.0,170,4200,23,35,4599
+9,1,Kids Faux Leather Jacket,synthetic_leather,standard,long,jacket,slim,imported,61.8,105.4,45.1,35.0,410,leather,four,118,reinforced,3.6,3.2,8.7,160,4000,21,28,4799
+10,1,Kids Street Style Hoodie,polyester,standard,long,hoodie,oversized,imported,59.4,100.1,42.6,33.2,260,fleece,four,98,double,3.4,3.8,9.2,220,3800,25,26,3499
