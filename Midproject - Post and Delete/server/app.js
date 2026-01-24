@@ -1,5 +1,4 @@
 const express = require("express")
-const path = require("path")
 const app = express()
 const carRoutes = require("./src/routes/carRoutes/carData.routes")
 const prodRoutes = require("./src/routes/productRoutes/products.routes")
