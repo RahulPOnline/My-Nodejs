@@ -19,7 +19,7 @@ async function postProducts(req, res) {
     const csvProducts = []
     const fileExists = fs.existsSync(productCSV)
 
-    // Ensure keys match the CSV headers
+
     const record = {
         id: data.Id || data.id,
         name: data.Name || data.name,
@@ -44,8 +44,6 @@ async function postProducts(req, res) {
     })
 
     try {
-        // const { id, name, description, brand, category, price } = req.body
-
         await csvWriter.writeRecords([record])
 
         fs.createReadStream(productCSV)
