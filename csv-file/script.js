@@ -20,7 +20,7 @@ fs.createReadStream("CarPrice.csv")
     })
 
     .on('error', (error) => {
-        console.log("something wrong happend");
+        console.log("something wrong happend", error);
     })
 
     .on('end', () => {
