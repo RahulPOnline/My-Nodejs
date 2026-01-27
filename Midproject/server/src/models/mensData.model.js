@@ -8,7 +8,7 @@ fs.createReadStream(path.join(__dirname, '..', '..', 'data', 'MensProduct.csv'))
 
     .pipe(parse({
         comment: "#",
-        column: true
+        columns: true
     }))
 
     .on('data', (data) => {
