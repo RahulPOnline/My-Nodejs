@@ -1,4 +1,3 @@
-const { act } = require("react");
 
 async function getAlldata() {
     let data = await fetch("http://localhost:3000/cars")            //fetch() contacts the server and waits for the response.
@@ -7,7 +6,7 @@ async function getAlldata() {
 
 }
 
-// getAlldata()
+getAlldata()
 
 
 async function getCarsDataById() {
@@ -17,7 +16,7 @@ async function getCarsDataById() {
 
 }
 
-// getCarsDataById()
+getCarsDataById()
 
 //================================================================================
 //================================================================================
