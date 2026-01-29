@@ -1,0 +1,51 @@
+product_id,product_name,category,brand,price,stock,rating
+1,Smartphone X1,Electronics,NexTech,699.99,120,4.5
+2,Laptop Pro 15,Electronics,CoreWave,1299.99,45,4.7
+3,Wireless Earbuds,Electronics,SoundMax,149.99,200,4.3
+4,Smartwatch Active,Electronics,FitPulse,199.99,80,4.4
+5,4K LED TV 55in,Electronics,ViewPlus,549.99,30,4.6
+6,Bluetooth Speaker,Electronics,BeatBox,89.99,150,4.2
+7,DSLR Camera,Electronics,PhotoSnap,899.99,25,4.8
+8,Tablet 10in,Electronics,Tabify,329.99,60,4.4
+9,Power Bank 20000mAh,Electronics,VoltUp,49.99,300,4.5
+10,Gaming Console,Electronics,PlayNext,499.99,40,4.9
+11,Running Shoes,Fashion,Stride,119.99,90,4.6
+12,Cotton T-Shirt,Fashion,UrbanWear,19.99,500,4.1
+13,Denim Jeans,Fashion,BlueRoute,59.99,200,4.3
+14,Leather Jacket,Fashion,RiderCo,249.99,35,4.7
+15,Sneakers Classic,Fashion,StreetKicks,89.99,150,4.5
+16,Backpack 30L,Fashion,PackPro,69.99,110,4.4
+17,Sunglasses UV400,Fashion,SunEdge,39.99,250,4.2
+18,Baseball Cap,Fashion,CapCity,14.99,400,4.0
+19,Smart Belt,Fashion,BuckleTech,49.99,75,4.3
+20,Winter Hoodie,Fashion,CozyFit,59.99,130,4.6
+21,Espresso Machine,Home Appliances,BrewMaster,399.99,28,4.8
+22,Air Fryer 5L,Home Appliances,CrispAir,149.99,65,4.7
+23,Vacuum Cleaner,Home Appliances,DustAway,229.99,50,4.5
+24,Microwave Oven,Home Appliances,HeatWave,199.99,40,4.4
+25,Blender Pro,Home Appliances,MixIt,99.99,90,4.3
+26,Electric Kettle,Home Appliances,QuickBoil,39.99,180,4.2
+27,Rice Cooker,Home Appliances,GrainChef,79.99,100,4.4
+28,Toaster 2-Slice,Home Appliances,Toastify,29.99,220,4.1
+29,Steam Iron,Home Appliances,SmoothPress,49.99,140,4.3
+30,Water Purifier,Home Appliances,PureDrop,299.99,35,4.6
+31,Organic Coffee Beans,Groceries,BeanLeaf,15.99,500,4.7
+32,Green Tea Pack,Groceries,NatureSip,9.99,600,4.5
+33,Olive Oil 1L,Groceries,MediGold,12.99,300,4.6
+34,Basmati Rice 5kg,Groceries,GrainLand,19.99,250,4.4
+35,Dark Chocolate Bar,Groceries,CocoaLux,3.49,800,4.8
+36,Almonds 1kg,Groceries,NutriFarm,14.99,200,4.5
+37,Protein Powder,Groceries,MuscleFuel,49.99,120,4.6
+38,Honey Organic,Groceries,BeePure,11.99,350,4.4
+39,Pasta Pack,Groceries,ItaliaBite,4.99,700,4.3
+40,Spice Set 10pcs,Groceries,FlavorBox,24.99,150,4.7
+41,Office Chair,Office,FlexSeat,179.99,55,4.5
+42,Standing Desk,Office,WorkLift,399.99,20,4.8
+43,Desk Lamp LED,Office,BrightLite,29.99,180,4.4
+44,Wireless Keyboard,Office,KeyFlow,49.99,130,4.3
+45,Wireless Mouse,Office,ClickPro,39.99,160,4.4
+46,Notebook Set,Office,PaperNest,9.99,500,4.2
+47,Printer All-in-One,Office,PrintHub,249.99,30,4.6
+48,External Hard Drive 1TB,Office,DataSafe,79.99,90,4.5
+49,USB-C Hub,Office,ConnectX,34.99,140,4.3
+50,Noise Cancelling Headphones,Electronics,SilentWave,299.99,70,4.9
