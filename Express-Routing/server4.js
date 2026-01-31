@@ -74,9 +74,7 @@ server.get("/:endpoint/:id", (req, res) => {
 
 
 
-
 const PORT = 5000
 server.listen(PORT, () => {
     console.log(`server running at ${PORT}`);
-
 })
