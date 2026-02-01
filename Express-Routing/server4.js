@@ -72,6 +72,15 @@ server.get("/:endpoint/:id", (req, res) => {
     }
 })
 
+server.post("/mens", (req, res) => {
+    const entry = req.body
+    if (!(entry.title && entry.price)) {
+        return res.status(400).json({ error: "invalid entry" })
+    }
+    entry.id = mensArr.length
+    mensArr.push(entry)
+    res.status(201).json(entry)
+})
 
 
 const PORT = 5000
