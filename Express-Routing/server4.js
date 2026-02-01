@@ -77,11 +77,20 @@ server.post("/mens", (req, res) => {
     if (!(entry.title && entry.price)) {
         return res.status(400).json({ error: "invalid entry" })
     }
-    entry.id = mensArr.length
+    entry.id = mensArr.length                                   //assigning id to new entry
     mensArr.push(entry)
     res.status(201).json(entry)
 })
 
+server.post("/womens", (req, res) => {
+    const entry = req.body
+    if (!(entry.title && entry.price)) {
+        return res.status(400).json({ error: "invalid entry" })
+    }
+    entry.id = womensArr.length
+    womensArr.push(entry)
+    res.status(201).json(entry)
+})
 
 const PORT = 5000
 server.listen(PORT, () => {
