@@ -1,4 +1,4 @@
-const groceriesArr = require("../models/grocery.model")
+let groceriesArr = require("../models/grocery.model")
 
 
 function getALLGrocery(req, res) {
@@ -23,9 +23,37 @@ function postGrocerydata(req, res) {
     res.status(201).json(entry)
 }
 
+// function deleteGroceryDataById(req, res) {
+//     const id = Number(req.params.id)
+//     const newArr = groceriesArr.filter(el => el.id !== id)
+
+//     if (newArr.length === groceriesArr.length) {
+//         return res.status(404).json({ error: "Item not found" })
+//     }
+
+//     groceriesArr = newArr
+//     res.json(groceriesArr)
+// }
+
+function deleteGroceryDataById(req, res) {
+    const id = Number(req.params.id)
+    const index = groceriesArr.findIndex(el => el.id === id)
+
+    if (index === -1) {
+        return res.status(404).json({ error: "Item not found" })
+    }
+
+    groceriesArr.splice(index, 1)
+    res.json(groceriesArr)
+}
+
+
+
+
+
 module.exports = {
     getALLGrocery,
     getGroceryById,
     postGrocerydata,
-
+    deleteGroceryDataById
 }
