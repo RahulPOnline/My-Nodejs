@@ -48,6 +48,18 @@ function deleteGroceryDataById(req, res) {
 }
 
 
+function patchGroceryDataById(req, res) {
+    const id = +req.params.id
+    let update = req.body
+    let index = groceriesArr.findIndex(el => el.id === id)
+    if (index === -1) {                                             //it shows item does not exist in an array with that id
+        return res.status(404).json({ error: "data not found" })
+    }
+    groceriesArr[index] = { ...groceriesArr[index], ...update }     //...groceriesArr[index] → takes all old fields 
+                                                                    //...update → overwrites only the fields sent in req.body
+    res.json({ message: "data updated" })
+}
+
 
 
 
@@ -55,5 +67,6 @@ module.exports = {
     getALLGrocery,
     getGroceryById,
     postGrocerydata,
-    deleteGroceryDataById
+    deleteGroceryDataById,
+    patchGroceryDataById,
 }
