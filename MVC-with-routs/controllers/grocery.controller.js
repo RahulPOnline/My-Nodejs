@@ -37,14 +37,14 @@ function postGrocerydata(req, res) {
 
 function deleteGroceryDataById(req, res) {
     const id = Number(req.params.id)
-    const index = groceriesArr.findIndex(el => el.id === id)
+    const index = groceriesArr.findIndex(el => el.id === id)        //using findIndex on basis of id we find the correct index
 
-    if (index === -1) {
+    if (index === -1) {                                             //it shows item does not exist in an array with that id
         return res.status(404).json({ error: "Item not found" })
     }
 
-    groceriesArr.splice(index, 1)
-    res.json(groceriesArr)
+    groceriesArr.splice(index, 1)                                   //using splice(index, 1) removes the same element
+    res.json({ message: "deleted successfully" })
 }
 
 
