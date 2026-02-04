@@ -57,7 +57,7 @@ function patchGroceryDataById(req, res) {
     }
     groceriesArr[index] = { ...groceriesArr[index], ...update }     //...groceriesArr[index] → takes all old fields 
                                                                     //...update → overwrites only the fields sent in req.body
-    res.json({ message: "data updated" })
+    res.json({ message: "data updated", data: groceriesArr[index] })
 }
 
 
