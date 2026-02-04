@@ -60,7 +60,16 @@ function patchGroceryDataById(req, res) {
     res.json({ message: "data updated", data: groceriesArr[index] })
 }
 
-
+function putGroceryDataById(req, res) {
+    const id = Number(req.params.id)
+    let update = req.body
+    let index = groceriesArr.findIndex(el => el.id === id)
+    if (index === -1) {
+        return res.status(404).json({ error: "data not found" })
+    }
+    groceriesArr[index] = { ...groceriesArr[index], ...update, id }     //PUT + spread old data = PATCH behavior
+    res.json({ message: "data updated", data: groceriesArr[index] })
+}
 
 
 module.exports = {
@@ -69,4 +78,5 @@ module.exports = {
     postGrocerydata,
     deleteGroceryDataById,
     patchGroceryDataById,
+    putGroceryDataById
 }
