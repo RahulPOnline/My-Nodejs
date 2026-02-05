@@ -26,13 +26,6 @@ function postGrocerydata(req, res) {
 // function deleteGroceryDataById(req, res) {
 //     const id = Number(req.params.id)
 //     const newArr = groceriesArr.filter(el => el.id !== id)
-
-//     if (newArr.length === groceriesArr.length) {
-//         return res.status(404).json({ error: "Item not found" })
-//     }
-
-//     groceriesArr = newArr
-//     res.json(groceriesArr)
 // }
 
 function deleteGroceryDataById(req, res) {
