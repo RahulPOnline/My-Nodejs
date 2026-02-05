@@ -23,11 +23,6 @@ function postGrocerydata(req, res) {
     res.status(201).json(entry)
 }
 
-// function deleteGroceryDataById(req, res) {
-//     const id = Number(req.params.id)
-//     const newArr = groceriesArr.filter(el => el.id !== id)
-// }
-
 function deleteGroceryDataById(req, res) {
     const id = Number(req.params.id)
     const index = groceriesArr.findIndex(el => el.id === id)        //using findIndex on basis of id we find the correct index
@@ -39,7 +34,6 @@ function deleteGroceryDataById(req, res) {
     groceriesArr.splice(index, 1)                                   //using splice(index, 1) removes the same element
     res.json({ message: "deleted successfully" })
 }
-
 
 function patchGroceryDataById(req, res) {
     const id = +req.params.id
