@@ -43,6 +43,16 @@ function patchElectronicsDataById(req, res) {
     res.json({ message: "data updated", data: electronicsArr[index] })
 }
 
+function putElectronicsDataById(req, res) {
+    const id = Number(req.params.id)
+    let update = req.body
+    let index = electronicsArr.findIndex(el => el.id === id)
+    if (index === -1) {
+        return res.status(404).json({ error: "data not found" })
+    }
+    electronicsArr[index] = { ...electronicsArr[index], ...update, id }
+    res.json({ message: "data updated", data: electronicsArr[index] })
+}
 
 module.exports = {
     getAllelectronicsItem,
@@ -50,5 +60,5 @@ module.exports = {
     postelectronicsData,
     deleteElectronicsDataById,
     patchElectronicsDataById,
-    
+    putElectronicsDataById
 }
