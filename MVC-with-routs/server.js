@@ -6,7 +6,7 @@ const mensRouter = require("./routes/mens.routes");
 const womensRouter = require('./routes/womens.routes');
 const kidsRouter = require('./routes/kids.routes');
 const groceryRoutes = require("./routes/grocery.routes");
-
+const electronicsRoutes = require("./routes/electronics.routes")
 
 const server = express()
 
@@ -29,6 +29,8 @@ server.use("/womens", womensRouter)
 server.use("/kids", kidsRouter)
 
 server.use("/grocery", groceryRoutes)
+
+server.use("/electronics", electronicsRoutes)
 
 
 // server.get("/womens/:id", (req, res) => {
