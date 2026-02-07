@@ -1,8 +1,8 @@
 const express = require("express")
-const {getAllMens,getAllMensByid} = require('./mensData.controller')
+const {getAllMensData,getAllMensDataByid} = require('./mensData.controller')
 const mensRoutes = express.Router()
 
-mensRoutes.get("/",getAllMens)
-mensRoutes.get("/:id",getAllMensByid)
+mensRoutes.get("/",getAllMensData)
+mensRoutes.get("/:id",getAllMensDataByid)
 
 module.exports=mensRoutes
