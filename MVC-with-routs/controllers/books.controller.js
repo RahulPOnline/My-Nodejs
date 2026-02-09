@@ -56,7 +56,6 @@ function putBooksDataById(req, res) {
 }
 
 
-
 module.exports = {
     getAllBooks,
     getAllBooksById,
