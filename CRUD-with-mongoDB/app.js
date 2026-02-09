@@ -20,8 +20,16 @@ app.get("/read", async (req, res) => {
     res.send(users)
 })
 
+app.get("/update", async (req, res) => {
+    let userUpdate = await userModel.findOneAndUpdate({ username: "rahulabc" }, { name: "Rahul Raj" }, { new: true })
+    res.send(userUpdate)
+})
 
 
+app.get("/delete", async (req, res) => {
+    let userDelete = await userModel.findOneAndDelete({ name: "Rahul" })
+    res.send(userDelete)
+})
 
 
 
