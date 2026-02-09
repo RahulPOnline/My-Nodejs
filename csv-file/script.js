@@ -24,7 +24,7 @@ fs.createReadStream("CarPrice.csv")
     })
 
     .on('end', () => {
-        console.log(carData.map((el, i, arr) => {
+        console.log(carData.map((el) => {
             return el.CarName
         }));
     })
