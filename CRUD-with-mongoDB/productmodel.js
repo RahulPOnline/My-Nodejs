@@ -2,7 +2,7 @@ const mongoose = require("mongoose")
 
 mongoose.connect(`mongodb://127.0.0.1:27017/productdata`)
 
-const productSchema = mongoose.Schema({
+const productSchema = new mongoose.Schema({
     title: String,
     category: String,
     price: Number
