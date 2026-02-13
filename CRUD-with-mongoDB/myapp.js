@@ -21,6 +21,11 @@ app.get("/read", async (req, res) => {
     res.send(profileRead)
 })
 
+app.get("/update", async (req, res) => {
+    let updateProfile = await profileModel.findByIdAndUpdate({ _id: "698f2883faaf34587f5f3b98" }, { course: "Full Stack" }, { new: true })
+    res.send(updateProfile)
+})
+
 
 
 
