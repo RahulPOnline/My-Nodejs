@@ -26,7 +26,10 @@ app.get("/update", async (req, res) => {
     res.send(updateProfile)
 })
 
-
+app.get("/delete", async (req, res) => {
+    let deleteProfile = await profileModel.findOneAndDelete({ course: "Full Stack" })
+    res.send(deleteProfile)
+})
 
 
 const PORT = 3000
