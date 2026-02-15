@@ -22,8 +22,14 @@ app.get("/read", async (req, res) => {
 })
 
 app.get("/update", async (req, res) => {
-    let updateProfile = await profileModel.findByIdAndUpdate({ _id: "698f2883faaf34587f5f3b98" }, { course: "Full Stack" }, { new: true })
-    res.send(updateProfile)
+    // let updateProfile = await profileModel.findByIdAndUpdate({ _id: "698f2883faaf34587f5f3b98" }, { course: "Full Stack" }, { new: true })
+    try {
+        let updateProfile = await profileModel.updateMany({ course: "Full Stack" }, { $set: { course: "MERN Stack" } }, { new: true })
+        res.send(updateProfile)
+
+    } catch (error) {
+        return res.status(500).send(error.message)
+    }
 })
 
 app.get("/delete", async (req, res) => {
