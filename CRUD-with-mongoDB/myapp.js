@@ -9,9 +9,9 @@ app.get("/", (req, res) => {
 
 app.get("/create", async (req, res) => {
     let profileCreate = await profileModel.create({
-        name: "Raj Sharma",
-        age: 29,
-        course: "MERN Stack"
+        name: "Sham Verma",
+        age: 26,
+        course: "Dot Net"
     })
     res.send(profileCreate)
 })
@@ -27,7 +27,8 @@ app.get("/update", async (req, res) => {
 })
 
 app.get("/delete", async (req, res) => {
-    let deleteProfile = await profileModel.findOneAndDelete({ course: "Full Stack" })
+    let deleteProfile = await profileModel.deleteMany({ course: "Full Stack" })
+    // let deleteProfile = await profileModel.findOneAndDelete({ course: "Full Stack" })
     res.send(deleteProfile)
 })
 
