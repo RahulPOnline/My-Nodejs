@@ -28,7 +28,7 @@ app.get("/update", async (req, res) => {
         res.send(updateProfile)
 
     } catch (error) {
-        return res.status(500).send(error.message)
+        res.status(500).send(error.message)
     }
 })
 
