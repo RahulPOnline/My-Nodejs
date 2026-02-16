@@ -22,8 +22,9 @@ app.get("/read", async (req, res) => {
 })
 
 app.get("/update", async (req, res) => {
-    // let updateProfile = await profileModel.findByIdAndUpdate({ _id: "698f2883faaf34587f5f3b98" }, { course: "Full Stack" }, { new: true })
     try {
+        // let updateProfile = await profileModel.findByIdAndUpdate({ _id: "698f2883faaf34587f5f3b98" }, { course: "Full Stack" }, { new: true })
+
         let updateProfile = await profileModel.updateMany({ course: "Full Stack" }, { $set: { course: "MERN Stack" } }, { new: true })
         res.send(updateProfile)
 
@@ -33,9 +34,21 @@ app.get("/update", async (req, res) => {
 })
 
 app.get("/delete", async (req, res) => {
-    let deleteProfile = await profileModel.deleteMany({ course: "Full Stack" })
-    // let deleteProfile = await profileModel.findOneAndDelete({ course: "Full Stack" })
-    res.send(deleteProfile)
+    try {
+        // let deleteProfile = await profileModel.findOneAndDelete({ course: "Full Stack" })
+
+        let deleteProfile = await profileModel.deleteMany({ course: "Full Stack" })
+        res.status(200).json({
+            message: "Deleted successfully",
+            result: deleteProfile
+        })
+        
+    } catch (error) {
+        res.status(500).json({
+            message: "Error deleting profile",
+            error: error.message
+        })
+    }
 })
 
 
