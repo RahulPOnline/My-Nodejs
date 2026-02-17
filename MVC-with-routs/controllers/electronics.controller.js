@@ -6,10 +6,13 @@ function getAllelectronicsItem(req, res) {
 
 function getelectronicsById(req, res) {
     const id = Number(req.params.id)
+
     if (Number.isNaN(id)) {
-        return res.status(400).json({ error: "Invalid entry" })
+        return res.status(400).json({ error: "Invalid id" })
     }
+    
     const item = electronicsArr.find(el => el.id === id)
+
     if (!item) {
         return res.status(404).json({ error: "data not found" })
     }
@@ -18,6 +21,7 @@ function getelectronicsById(req, res) {
 
 function postelectronicsData(req, res) {
     const entry = req.body
+
     if (!(entry.title && entry.price)) {
         return res.status(400).json({ error: "invalid entry" })
     }
@@ -29,6 +33,7 @@ function postelectronicsData(req, res) {
 function deleteElectronicsDataById(req, res) {
     const id = Number(req.params.id)
     const index = electronicsArr.findIndex(el => el.id === id)
+
     if (index === -1) {
         return res.status(404).json({ error: "item not found" })
     }
@@ -40,6 +45,7 @@ function patchElectronicsDataById(req, res) {
     const id = Number(req.params.id)
     const update = req.body
     const index = electronicsArr.findIndex(el => el.id === id)
+
     if (index === -1) {
         return res.status(404).json({ error: "data not found" })
     }
@@ -49,13 +55,14 @@ function patchElectronicsDataById(req, res) {
 
 function putElectronicsDataById(req, res) {
     const id = Number(req.params.id)
-    let update = req.body
-    let index = electronicsArr.findIndex(el => el.id === id)
+    const update = req.body
+    const index = electronicsArr.findIndex(el => el.id === id)
+
     if (index === -1) {
         return res.status(404).json({ error: "data not found" })
     }
     electronicsArr[index] = { ...electronicsArr[index], ...update, id }
-    res.json({ message: "data updated", data: electronicsArr[index] })
+    res.json({ message: "data replaced", data: electronicsArr[index] })
 }
 
 module.exports = {
