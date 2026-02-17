@@ -5,11 +5,15 @@ function getAllelectronicsItem(req, res) {
 }
 
 function getelectronicsById(req, res) {
-    let id = Number(req.params.id)
-    if (Number.isNaN(id) || id < 0 || id >= electronicsArr.length) {
+    const id = Number(req.params.id)
+    if (Number.isNaN(id)) {
+        return res.status(400).json({ error: "Invalid entry" })
+    }
+    const item = electronicsArr.find(el => el.id === id)
+    if (!item) {
         return res.status(404).json({ error: "data not found" })
     }
-    res.json(electronicsArr[id])
+    res.json(item)
 }
 
 function postelectronicsData(req, res) {
