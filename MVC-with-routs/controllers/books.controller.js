@@ -46,8 +46,8 @@ function patchBooksDataById(req, res) {
 
 function putBooksDataById(req, res) {
     const id = Number(req.params.id)
-    let update = req.body
-    let index = booksArr.findIndex(el => el.id === id)
+    const update = req.body
+    const index = booksArr.findIndex(el => el.id === id)
     if (index === -1) {
         return res.status(404).json({ error: "Data not found" })
     }

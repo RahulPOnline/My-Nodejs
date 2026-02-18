@@ -10,7 +10,7 @@ function getelectronicsById(req, res) {
     if (Number.isNaN(id)) {
         return res.status(400).json({ error: "Invalid id" })
     }
-    
+
     const item = electronicsArr.find(el => el.id === id)
 
     if (!item) {
@@ -61,7 +61,7 @@ function putElectronicsDataById(req, res) {
     if (index === -1) {
         return res.status(404).json({ error: "data not found" })
     }
-    electronicsArr[index] = { ...electronicsArr[index], ...update, id }
+    electronicsArr[index] = { ...update, id }
     res.json({ message: "data replaced", data: electronicsArr[index] })
 }
 
