@@ -6,6 +6,11 @@ function getAllBooks(req, res) {
 
 function getAllBooksById(req, res) {
     let id = Number(req.params.id)
+
+    if (Number.isNaN(id)) {
+        return res.status(400).json({ error: "Invalid id" })
+    }
+
     const book = booksArr.find(el => el.id === id)
     if (!book) {
         return res.status(404).json({ error: "Data not found" })
