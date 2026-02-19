@@ -30,6 +30,9 @@ function postBooksData(req, res) {
 
 function deleteBooksDataById(req, res) {
     const id = Number(req.params.id)
+    if (Number.isNaN(id)) {
+        return res.status(400).json({ error: "Invalid id" })
+    }
     const index = booksArr.findIndex(el => el.id === id)
     if (index === -1) {
         return res.status(404).json({ error: "Resorce does'nt exist" })
@@ -40,6 +43,9 @@ function deleteBooksDataById(req, res) {
 
 function patchBooksDataById(req, res) {
     const id = Number(req.params.id)
+    if (Number.isNaN(id)) {
+        return res.status(400).json({ error: "Invalid id" })
+    }
     const update = req.body
     const index = booksArr.findIndex(el => el.id === id)
     if (index === -1) {
