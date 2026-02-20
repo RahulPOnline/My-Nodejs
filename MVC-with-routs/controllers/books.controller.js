@@ -58,6 +58,9 @@ function patchBooksDataById(req, res) {
 function putBooksDataById(req, res) {
     const id = Number(req.params.id)
     const update = req.body
+    if (Number.isNaN(id)) {
+        return res.status(400).json({ error: "Invalid id" })
+    }
     const index = booksArr.findIndex(el => el.id === id)
     if (index === -1) {
         return res.status(404).json({ error: "Data not found" })
