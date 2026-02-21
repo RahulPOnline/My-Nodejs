@@ -32,6 +32,10 @@ function postelectronicsData(req, res) {
 
 function deleteElectronicsDataById(req, res) {
     const id = Number(req.params.id)
+    if (Number.isNaN(id)) {
+        return res.status(400).json({ error: "Invalid id" })
+    }
+
     const index = electronicsArr.findIndex(el => el.id === id)
 
     if (index === -1) {
@@ -44,6 +48,9 @@ function deleteElectronicsDataById(req, res) {
 function patchElectronicsDataById(req, res) {
     const id = Number(req.params.id)
     const update = req.body
+    if (Number.isNaN(id)) {
+        return res.status(400).json({ error: "Invalid id" })
+    }
     const index = electronicsArr.findIndex(el => el.id === id)
 
     if (index === -1) {
@@ -56,6 +63,9 @@ function patchElectronicsDataById(req, res) {
 function putElectronicsDataById(req, res) {
     const id = Number(req.params.id)
     const update = req.body
+    if (Number.isNaN(id)) {
+        return res.status(400).json({ error: "Invalid id" })
+    }
     const index = electronicsArr.findIndex(el => el.id === id)
 
     if (index === -1) {
